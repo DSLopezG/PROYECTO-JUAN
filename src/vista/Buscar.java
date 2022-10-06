@@ -11,7 +11,7 @@ package vista;
 public class Buscar extends javax.swing.JFrame {
 
     /**
-     * Creates new form Buscar
+     * Creates new form Inventario
      */
     public Buscar() {
         initComponents();
@@ -26,21 +26,142 @@ public class Buscar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        jPanel1 = new javax.swing.JPanel();
+        icono_buscar = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabla_buscar = new javax.swing.JTable();
+        btn_imp_buscar = new javax.swing.JButton();
+        btn_atras_buscar = new javax.swing.JButton();
+        lbl_buscar = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt_buscar = new javax.swing.JTextArea();
+
+        jMenu1.setText("jMenu1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        icono_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Logo.png"))); // NOI18N
+
+        tabla_buscar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Número Factura", "Nombre", "Documento", "Teléfono", "Marca", "Cargador", "Audífonos", "Precio"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabla_buscar.setCellSelectionEnabled(true);
+        jScrollPane2.setViewportView(tabla_buscar);
+        tabla_buscar.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+
+        btn_imp_buscar.setText("IMPRIMIR");
+        btn_imp_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_imp_buscarActionPerformed(evt);
+            }
+        });
+
+        btn_atras_buscar.setText("ATRAS");
+        btn_atras_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atras_buscarActionPerformed(evt);
+            }
+        });
+
+        lbl_buscar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        lbl_buscar.setForeground(new java.awt.Color(0, 51, 51));
+        lbl_buscar.setText("INGRESE EL NÚMERO DE FACTURA QUE DESEA BUSCAR :");
+
+        txt_buscar.setColumns(20);
+        txt_buscar.setRows(5);
+        jScrollPane1.setViewportView(txt_buscar);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addComponent(icono_buscar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(162, 162, 162)
+                        .addComponent(lbl_buscar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(243, 243, 243)
+                        .addComponent(btn_atras_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(136, 136, 136)
+                        .addComponent(btn_imp_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 791, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(icono_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(lbl_buscar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_imp_buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_atras_buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_imp_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imp_buscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_imp_buscarActionPerformed
+
+    private void btn_atras_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atras_buscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_atras_buscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -68,6 +189,7 @@ public class Buscar extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Buscar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -78,5 +200,15 @@ public class Buscar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_atras_buscar;
+    private javax.swing.JButton btn_imp_buscar;
+    private javax.swing.JLabel icono_buscar;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lbl_buscar;
+    public javax.swing.JTable tabla_buscar;
+    private javax.swing.JTextArea txt_buscar;
     // End of variables declaration//GEN-END:variables
 }
