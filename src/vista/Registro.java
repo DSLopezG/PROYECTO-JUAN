@@ -45,7 +45,7 @@ public class Registro extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel2.setText("INGRESE LOS DATOS");
 
-        jLabel3.setText("BDFKSDJBFKJBNFSDF");
+        jLabel3.setText("swdsfdg");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
