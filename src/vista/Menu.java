@@ -48,7 +48,7 @@ public class Menu extends javax.swing.JFrame {
 
         btn_Comprar.setBackground(new java.awt.Color(153, 153, 153));
         btn_Comprar.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        btn_Comprar.setForeground(new java.awt.Color(0, 0, 0));
+        btn_Comprar.setForeground(new java.awt.Color(0, 51, 51));
         btn_Comprar.setText("COMPRAR");
         btn_Comprar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_Comprar.addActionListener(new java.awt.event.ActionListener() {
@@ -59,19 +59,19 @@ public class Menu extends javax.swing.JFrame {
 
         btn_Buscar.setBackground(new java.awt.Color(153, 153, 153));
         btn_Buscar.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        btn_Buscar.setForeground(new java.awt.Color(0, 0, 0));
+        btn_Buscar.setForeground(new java.awt.Color(0, 51, 51));
         btn_Buscar.setText("BUSCAR");
         btn_Buscar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btn_Inventario.setBackground(new java.awt.Color(153, 153, 153));
         btn_Inventario.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        btn_Inventario.setForeground(new java.awt.Color(0, 0, 0));
+        btn_Inventario.setForeground(new java.awt.Color(0, 51, 51));
         btn_Inventario.setText("INVENTARIO");
         btn_Inventario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btn_Salir.setBackground(new java.awt.Color(153, 153, 153));
         btn_Salir.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        btn_Salir.setForeground(new java.awt.Color(0, 0, 0));
+        btn_Salir.setForeground(new java.awt.Color(0, 51, 51));
         btn_Salir.setText("SALIR");
         btn_Salir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
