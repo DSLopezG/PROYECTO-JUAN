@@ -34,6 +34,8 @@ public class Inicio extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_iniciar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        btn_iniciar.setForeground(new java.awt.Color(0, 204, 204));
         btn_iniciar.setText("INICIAR");
         jPanel1.add(btn_iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 100, 40));
 
