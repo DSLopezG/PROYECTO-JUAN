@@ -28,11 +28,11 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lbl_LogoMenu = new javax.swing.JLabel();
-        btn_Comprar = new javax.swing.JToggleButton();
-        btn_Buscar = new javax.swing.JToggleButton();
-        btn_Inventario = new javax.swing.JToggleButton();
-        btn_Salir = new javax.swing.JToggleButton();
         lbl_Menu = new javax.swing.JLabel();
+        btn_Comprar = new javax.swing.JButton();
+        btn_Buscar = new javax.swing.JButton();
+        btn_Inventario = new javax.swing.JButton();
+        btn_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,11 +41,16 @@ public class Menu extends javax.swing.JFrame {
 
         lbl_LogoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Logo.png"))); // NOI18N
 
+        lbl_Menu.setBackground(new java.awt.Color(204, 204, 204));
+        lbl_Menu.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        lbl_Menu.setForeground(new java.awt.Color(0, 153, 153));
+        lbl_Menu.setText("MENU OPCIONES");
+
         btn_Comprar.setBackground(new java.awt.Color(153, 153, 153));
         btn_Comprar.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         btn_Comprar.setForeground(new java.awt.Color(0, 0, 0));
         btn_Comprar.setText("COMPRAR");
-        btn_Comprar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_Comprar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_Comprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ComprarActionPerformed(evt);
@@ -56,29 +61,19 @@ public class Menu extends javax.swing.JFrame {
         btn_Buscar.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         btn_Buscar.setForeground(new java.awt.Color(0, 0, 0));
         btn_Buscar.setText("BUSCAR");
-        btn_Buscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_Buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_BuscarActionPerformed(evt);
-            }
-        });
+        btn_Buscar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btn_Inventario.setBackground(new java.awt.Color(153, 153, 153));
         btn_Inventario.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         btn_Inventario.setForeground(new java.awt.Color(0, 0, 0));
         btn_Inventario.setText("INVENTARIO");
-        btn_Inventario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_Inventario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btn_Salir.setBackground(new java.awt.Color(153, 153, 153));
         btn_Salir.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         btn_Salir.setForeground(new java.awt.Color(0, 0, 0));
         btn_Salir.setText("SALIR");
-        btn_Salir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        lbl_Menu.setBackground(new java.awt.Color(204, 204, 204));
-        lbl_Menu.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        lbl_Menu.setForeground(new java.awt.Color(0, 153, 153));
-        lbl_Menu.setText("MENU OPCIONES");
+        btn_Salir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -89,17 +84,15 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(lbl_Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(204, 204, 204))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(181, 181, 181)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Comprar, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addComponent(lbl_LogoMenu)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addGap(148, 148, 148)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btn_Salir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_Comprar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_Buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbl_LogoMenu))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,24 +100,22 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(lbl_LogoMenu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(btn_Comprar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btn_Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btn_Inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,10 +130,6 @@ public class Menu extends javax.swing.JFrame {
     private void btn_ComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ComprarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_ComprarActionPerformed
-
-    private void btn_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_BuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,10 +169,10 @@ public class Menu extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JToggleButton btn_Buscar;
-    public javax.swing.JToggleButton btn_Comprar;
-    public javax.swing.JToggleButton btn_Inventario;
-    public javax.swing.JToggleButton btn_Salir;
+    public javax.swing.JButton btn_Buscar;
+    public javax.swing.JButton btn_Comprar;
+    public javax.swing.JButton btn_Inventario;
+    public javax.swing.JButton btn_Salir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl_LogoMenu;
     private javax.swing.JLabel lbl_Menu;
