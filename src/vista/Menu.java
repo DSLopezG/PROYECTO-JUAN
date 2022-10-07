@@ -182,10 +182,10 @@ public class Menu extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btn_Buscar;
-    private javax.swing.JToggleButton btn_Comprar;
-    private javax.swing.JToggleButton btn_Inventario;
-    private javax.swing.JToggleButton btn_Salir;
+    public javax.swing.JToggleButton btn_Buscar;
+    public javax.swing.JToggleButton btn_Comprar;
+    public javax.swing.JToggleButton btn_Inventario;
+    public javax.swing.JToggleButton btn_Salir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl_LogoMenu;
     private javax.swing.JLabel lbl_Menu;

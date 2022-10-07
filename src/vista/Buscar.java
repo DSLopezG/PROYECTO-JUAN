@@ -210,9 +210,9 @@ public class Buscar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_atras_buscar;
-    private javax.swing.JButton btn_buscar_buscar;
-    private javax.swing.JButton btn_imp_buscar;
+    public javax.swing.JButton btn_atras_buscar;
+    public javax.swing.JButton btn_buscar_buscar;
+    public javax.swing.JButton btn_imp_buscar;
     private javax.swing.JLabel icono_buscar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;

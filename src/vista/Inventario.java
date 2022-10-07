@@ -179,8 +179,8 @@ public class Inventario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_atras_inventario;
-    private javax.swing.JButton btn_imp_inventario;
+    public javax.swing.JButton btn_atras_inventario;
+    public javax.swing.JButton btn_imp_inventario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;

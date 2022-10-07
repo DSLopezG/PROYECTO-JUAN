@@ -118,18 +118,16 @@ public class Comprar extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprarLayout.createSequentialGroup()
                         .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(panel_comprarLayout.createSequentialGroup()
-                                .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addGap(257, 257, 257))
-                            .addGroup(panel_comprarLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(68, 68, 68)
                                 .addComponent(txt_nom_com)
                                 .addGap(36, 36, 36))
                             .addGroup(panel_comprarLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(45, 45, 45)))
+                                .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addGap(257, 257, 257)))
                         .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
                             .addComponent(jLabel8)
@@ -268,8 +266,8 @@ public class Comprar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_atras_com;
-    private javax.swing.JButton btn_comprar;
+    public javax.swing.JButton btn_atras_com;
+    public javax.swing.JButton btn_comprar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
