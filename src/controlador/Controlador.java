@@ -126,6 +126,8 @@ public class Controlador implements ActionListener  {
               
               vw_menu.setVisible(false);
               JOptionPane.showMessageDialog(null, "GRACIAS POR USAR EL PROGRAMA");
+              System.exit(0);
+
           }
           
           if (e.getSource() == vw_comprar.btn_atras_com) {

@@ -42,7 +42,7 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1.add(btn_iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 100, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/LA SOLUCION QUE SIEMPRE ESPERO.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 310));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 310));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
