@@ -38,22 +38,14 @@ public class Comprar extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         btn_atras_com = new javax.swing.JButton();
         btn_comprar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txt_doc_com = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txt_tel_com = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txt_nombre_com = new javax.swing.JTextArea();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        txt_dir_com = new javax.swing.JTextArea();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        txt_fac_com = new javax.swing.JTextArea();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        txt_carga_com = new javax.swing.JTextArea();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        txt_audi_com = new javax.swing.JTextArea();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        txt_marca_com = new javax.swing.JTextArea();
+        txt_nom_com = new javax.swing.JTextField();
+        txt_dir_com = new javax.swing.JTextField();
+        txt_tel_com = new javax.swing.JTextField();
+        txt_doc_com = new javax.swing.JTextField();
+        txt_mar_com = new javax.swing.JTextField();
+        txt_carga_com = new javax.swing.JTextField();
+        txt_audi_com = new javax.swing.JTextField();
+        txt_fac_com = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,48 +99,16 @@ public class Comprar extends javax.swing.JFrame {
             }
         });
 
-        txt_doc_com.setColumns(20);
-        txt_doc_com.setRows(5);
-        jScrollPane1.setViewportView(txt_doc_com);
-
-        txt_tel_com.setColumns(20);
-        txt_tel_com.setRows(5);
-        jScrollPane2.setViewportView(txt_tel_com);
-
-        txt_nombre_com.setColumns(20);
-        txt_nombre_com.setRows(5);
-        jScrollPane3.setViewportView(txt_nombre_com);
-
-        txt_dir_com.setColumns(20);
-        txt_dir_com.setRows(5);
-        jScrollPane4.setViewportView(txt_dir_com);
-
-        txt_fac_com.setColumns(20);
-        txt_fac_com.setRows(5);
-        jScrollPane5.setViewportView(txt_fac_com);
-
-        txt_carga_com.setColumns(20);
-        txt_carga_com.setRows(5);
-        jScrollPane6.setViewportView(txt_carga_com);
-
-        txt_audi_com.setColumns(20);
-        txt_audi_com.setRows(5);
-        jScrollPane7.setViewportView(txt_audi_com);
-
-        txt_marca_com.setColumns(20);
-        txt_marca_com.setRows(5);
-        jScrollPane8.setViewportView(txt_marca_com);
+        txt_nom_com.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nom_comActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_comprarLayout = new javax.swing.GroupLayout(panel_comprar);
         panel_comprar.setLayout(panel_comprarLayout);
         panel_comprarLayout.setHorizontalGroup(
             panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_comprarLayout.createSequentialGroup()
-                .addGap(216, 216, 216)
-                .addComponent(btn_atras_com, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(btn_comprar, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprarLayout.createSequentialGroup()
                 .addContainerGap(91, Short.MAX_VALUE)
                 .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,30 +116,43 @@ public class Comprar extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(205, 205, 205))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprarLayout.createSequentialGroup()
-                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4))
-                        .addGap(33, 33, 33)
-                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(48, 48, 48)
+                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(panel_comprarLayout.createSequentialGroup()
+                                .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(257, 257, 257))
+                            .addGroup(panel_comprarLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(68, 68, 68)
+                                .addComponent(txt_nom_com)
+                                .addGap(36, 36, 36))
+                            .addGroup(panel_comprarLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(45, 45, 45)))
                         .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
                             .addComponent(jLabel8)
                             .addComponent(jLabel7)
                             .addComponent(jLabel6))
-                        .addGap(40, 40, 40)
+                        .addGap(26, 26, 26)
                         .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(75, 75, 75))))
+                            .addComponent(txt_mar_com, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txt_fac_com, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_audi_com, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_carga_com, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(84, 84, 84))))
+            .addGroup(panel_comprarLayout.createSequentialGroup()
+                .addGap(216, 216, 216)
+                .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_dir_com, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel_comprarLayout.createSequentialGroup()
+                        .addComponent(btn_atras_com, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
+                        .addComponent(btn_comprar, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_tel_com, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_doc_com, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_comprarLayout.setVerticalGroup(
             panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,30 +170,30 @@ public class Comprar extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9))
                     .addGroup(panel_comprarLayout.createSequentialGroup()
-                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txt_nom_com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_doc_com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_tel_com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txt_dir_com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panel_comprarLayout.createSequentialGroup()
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addComponent(txt_mar_com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(txt_carga_com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(txt_audi_com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(txt_fac_com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_atras_com, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_comprar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -254,6 +227,10 @@ public class Comprar extends javax.swing.JFrame {
     private void btn_atras_comActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atras_comActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_atras_comActionPerformed
+
+    private void txt_nom_comActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nom_comActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_nom_comActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,22 +279,14 @@ public class Comprar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JPanel panel_comprar;
-    public javax.swing.JTextArea txt_audi_com;
-    public javax.swing.JTextArea txt_carga_com;
-    public javax.swing.JTextArea txt_dir_com;
-    public javax.swing.JTextArea txt_doc_com;
-    public javax.swing.JTextArea txt_fac_com;
-    public javax.swing.JTextArea txt_marca_com;
-    public javax.swing.JTextArea txt_nombre_com;
-    public javax.swing.JTextArea txt_tel_com;
+    public javax.swing.JTextField txt_audi_com;
+    public javax.swing.JTextField txt_carga_com;
+    public javax.swing.JTextField txt_dir_com;
+    public javax.swing.JTextField txt_doc_com;
+    public javax.swing.JTextField txt_fac_com;
+    public javax.swing.JTextField txt_mar_com;
+    public javax.swing.JTextField txt_nom_com;
+    public javax.swing.JTextField txt_tel_com;
     // End of variables declaration//GEN-END:variables
 }
