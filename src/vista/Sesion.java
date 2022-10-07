@@ -31,10 +31,10 @@ public class Sesion extends javax.swing.JFrame {
         lbl_LogoSesion = new javax.swing.JLabel();
         lbl_Usuario = new javax.swing.JLabel();
         lbl_Contraseña = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        txt_inicio_usu = new javax.swing.JTextField();
+        txt_inicio_contra = new javax.swing.JTextField();
+        btn_iniciosesion = new javax.swing.JButton();
+        btn_registrar_inicio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,30 +55,36 @@ public class Sesion extends javax.swing.JFrame {
         lbl_Contraseña.setForeground(new java.awt.Color(0, 0, 0));
         lbl_Contraseña.setText("CONTRASEÑA");
 
-        jTextField1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txt_inicio_usu.setBackground(new java.awt.Color(153, 153, 153));
+        txt_inicio_usu.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        txt_inicio_usu.setForeground(new java.awt.Color(0, 0, 0));
+        txt_inicio_usu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txt_inicio_usuActionPerformed(evt);
             }
         });
 
-        jTextField2.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        txt_inicio_contra.setBackground(new java.awt.Color(153, 153, 153));
+        txt_inicio_contra.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        txt_inicio_contra.setForeground(new java.awt.Color(0, 0, 0));
+        txt_inicio_contra.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txt_inicio_contra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_inicio_contraActionPerformed(evt);
+            }
+        });
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("INICIAR SESION");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_iniciosesion.setBackground(new java.awt.Color(153, 153, 153));
+        btn_iniciosesion.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        btn_iniciosesion.setForeground(new java.awt.Color(0, 0, 0));
+        btn_iniciosesion.setText("INICIAR SESION");
+        btn_iniciosesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jButton2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("REGISTRAR");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_registrar_inicio.setBackground(new java.awt.Color(153, 153, 153));
+        btn_registrar_inicio.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        btn_registrar_inicio.setForeground(new java.awt.Color(0, 0, 0));
+        btn_registrar_inicio.setText("REGISTRAR");
+        btn_registrar_inicio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,13 +102,13 @@ public class Sesion extends javax.swing.JFrame {
                 .addContainerGap(106, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_iniciosesion, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_registrar_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lbl_Contraseña)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_inicio_contra, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_inicio_usu, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lbl_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(105, 105, 105))
         );
@@ -116,15 +122,15 @@ public class Sesion extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(lbl_Usuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_inicio_usu, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_Contraseña)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_inicio_contra, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_iniciosesion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_registrar_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(98, Short.MAX_VALUE))
         );
 
@@ -144,9 +150,13 @@ public class Sesion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txt_inicio_usuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_inicio_usuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txt_inicio_usuActionPerformed
+
+    private void txt_inicio_contraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_inicio_contraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_inicio_contraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,14 +194,14 @@ public class Sesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
+    public javax.swing.JButton btn_iniciosesion;
+    public javax.swing.JButton btn_registrar_inicio;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lbl_Contraseña;
     private javax.swing.JLabel lbl_InicioSesion;
     private javax.swing.JLabel lbl_LogoSesion;
     private javax.swing.JLabel lbl_Usuario;
+    public javax.swing.JTextField txt_inicio_contra;
+    public javax.swing.JTextField txt_inicio_usu;
     // End of variables declaration//GEN-END:variables
 }
