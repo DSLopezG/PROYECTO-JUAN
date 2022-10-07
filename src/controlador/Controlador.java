@@ -22,7 +22,7 @@ public class Controlador implements ActionListener  {
         this.vw_inicio = vw_inicio;
         this.vw_menu = vw_menu;
         this.vw_inicio.btn_iniciar.addActionListener(this);   
-        this.vw_menu.btn_atras.addActionListener(this);
+        
      }
      
      
@@ -38,12 +38,7 @@ public class Controlador implements ActionListener  {
               vw_inicio.setVisible(false);
               vw_menu.setVisible(true);
           }
-          
-          if (e.getSource() == vw_menu.btn_atras){
-          
-              vw_inicio.setVisible(true);
-              vw_menu.setVisible(false);
-          }
+
   
      }
 }
