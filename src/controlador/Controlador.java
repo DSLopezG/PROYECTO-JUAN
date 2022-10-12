@@ -4,9 +4,11 @@
  */
 package controlador;
 
+import com.mysql.jdbc.PreparedStatement;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import vista.Buscar;
 import vista.Comprar;
 import vista.Inicio;
@@ -14,6 +16,14 @@ import vista.Inventario;
 import vista.Menu;
 import vista.Registro;
 import vista.Sesion;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modelo.ConexionBD;
 
 public class Controlador implements ActionListener  {
         
@@ -116,6 +126,50 @@ public class Controlador implements ActionListener  {
               
               vw_menu.setVisible(false);
               vw_buscar.setVisible(true);
+              
+              DefaultTableModel modelo = new DefaultTableModel();
+              vw_buscar.tabla_buscar.setModel(modelo);
+            
+               PreparedStatement ps = null;
+               ResultSet rs = null;
+               ConexionBD conn = new ConexionBD();
+               Connection con = (Connection) conn.getConexion();
+
+            String sql = "SELECT * FROM ventas";
+            try {
+                ps = (PreparedStatement) con.prepareStatement(sql);
+                rs = ps.executeQuery();
+                ResultSetMetaData rsMD = (ResultSetMetaData) rs.getMetaData();
+
+                int cantidadColumnas = rsMD.getColumnCount();
+
+                modelo.addColumn("NumFactura");
+                modelo.addColumn("Nombre");
+                modelo.addColumn("Documento");
+                modelo.addColumn("Telefono");
+                modelo.addColumn("Marca");
+                modelo.addColumn("Cargador");
+                modelo.addColumn("Audifonos");
+                modelo.addColumn("Precio");
+
+                while (rs.next()) {
+
+                    Object[] filas = new Object[cantidadColumnas];
+
+                    for (int i = 0; i < cantidadColumnas; i++) {
+
+                        filas[i] = rs.getObject(i + 1);
+
+                    }
+
+                    modelo.addRow(filas);
+
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+              
           }
           if (e.getSource() == vw_menu.btn_Inventario) {
               
