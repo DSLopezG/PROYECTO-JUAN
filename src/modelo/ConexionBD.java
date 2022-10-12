@@ -11,11 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-
-/**
- *
- * @author Daniela Lopez
- */
 public class ConexionBD {
     
     private final String BASE = "ventas";
