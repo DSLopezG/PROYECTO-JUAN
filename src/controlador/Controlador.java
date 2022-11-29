@@ -79,10 +79,9 @@ public class Controlador implements ActionListener  {
           
           if (e.getSource() == vw_sesion.btn_iniciosesion) {
               
-              if ((vw_sesion.txt_inicio_usu.getText().equalsIgnoreCase("jesegura")&& vw_sesion.txt_inicio_contra.getText().equalsIgnoreCase("1111"))||
-                  (vw_sesion.txt_inicio_usu.getText().equalsIgnoreCase("dslopez")&& vw_sesion.txt_inicio_contra.getText().equalsIgnoreCase("2222"))||
-                  (vw_sesion.txt_inicio_usu.getText().equalsIgnoreCase("cmcastillo")&& vw_sesion.txt_inicio_contra.getText().equalsIgnoreCase("3333"))||
-                  (vw_sesion.txt_inicio_usu.getText().equalsIgnoreCase("jalopez")&& vw_sesion.txt_inicio_contra.getText().equalsIgnoreCase("4444"))) {
+              
+              
+              if ((vw_sesion.txt_inicio_usu.getText().equalsIgnoreCase("jalopez")&& vw_sesion.txt_inicio_contra.getText().equalsIgnoreCase("4444"))) {
                   
                   vw_menu.setVisible(true);
                   vw_sesion.setVisible(false);
@@ -92,23 +91,47 @@ public class Controlador implements ActionListener  {
               
           }
           if (e.getSource() == vw_sesion.btn_registrar_inicio) {
-              
+       
               vw_registro.setVisible(true);
               vw_sesion.setVisible(false);
+              
           }
           
            if (e.getSource() == vw_registro.btn_registrar) {
               
               
               if(vw_registro.txt_nom_reg.getText().length()!=0 && vw_registro.txt_ape_reg.getText().length()!=0 &&
-                 vw_registro.txt_correo_reg.getText().length()!=0 && vw_registro.txt_contra_reg.getText().length()!=0){
+                 vw_registro.txt_usuario_reg.getText().length()!=0 && vw_registro.txt_contra_reg.getText().length()!=0){
               
-              vw_registro.setVisible(false);
-              JOptionPane.showMessageDialog(null,"REGISTRO EXITOSO");
-              vw_sesion.setVisible(true);
-              
+                        String nombre = vw_registro.txt_nom_reg.getText();
+                        String apellido = vw_registro.txt_ape_reg.getText();
+                        String usuario = vw_registro.txt_usuario_reg.getText();
+                        String contraseña = vw_registro.txt_contra_reg.getText();
+                        
+                        PreparedStatement ps = null;
+                        ConexionBD conn = new ConexionBD();
+                        Connection con = (Connection) conn.getConexion();
+
+                     String sql2 = "INSERT INTO usuarios (Nombre, Apellido, Usuario, Contraseña) VALUES ('"+nombre+"', '"+apellido+"', '"+usuario+"', '"+contraseña+"');";
+                     
+                     try {
+                         
+                         ps = (PreparedStatement) con.prepareStatement(sql2);              
+                         ps.executeUpdate();
+                        
+                         vw_registro.setVisible(false);
+                         JOptionPane.showMessageDialog(null,"REGISTRO EXITOSO");
+                         vw_sesion.setVisible(true);
+                         
+                     } catch (SQLException ex) {
+                         Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                         JOptionPane.showMessageDialog(null,"REGISTRO RECHAZADO");
+                     }
+
+                      
+
               } else if(vw_registro.txt_nom_reg.getText().length()==0 || vw_registro.txt_ape_reg.getText().length()==0 ||
-                 vw_registro.txt_correo_reg.getText().length()==0 || vw_registro.txt_contra_reg.getText().length()==0) {
+                 vw_registro.txt_usuario_reg.getText().length()==0 || vw_registro.txt_contra_reg.getText().length()==0) {
                   
                    JOptionPane.showMessageDialog(null,"FALTAN CAMPOS POR LLENAR");
               }

@@ -36,7 +36,7 @@ public class Registro extends javax.swing.JFrame {
         btn_registrar = new javax.swing.JButton();
         txt_nom_reg = new javax.swing.JTextField();
         txt_ape_reg = new javax.swing.JTextField();
-        txt_correo_reg = new javax.swing.JTextField();
+        txt_usuario_reg = new javax.swing.JTextField();
         txt_contra_reg = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,9 +86,9 @@ public class Registro extends javax.swing.JFrame {
         txt_ape_reg.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         txt_ape_reg.setForeground(new java.awt.Color(0, 0, 0));
 
-        txt_correo_reg.setBackground(new java.awt.Color(153, 153, 153));
-        txt_correo_reg.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        txt_correo_reg.setForeground(new java.awt.Color(0, 0, 0));
+        txt_usuario_reg.setBackground(new java.awt.Color(153, 153, 153));
+        txt_usuario_reg.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        txt_usuario_reg.setForeground(new java.awt.Color(0, 0, 0));
 
         txt_contra_reg.setBackground(new java.awt.Color(153, 153, 153));
         txt_contra_reg.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
@@ -114,7 +114,7 @@ public class Registro extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_correo_reg, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_usuario_reg, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_contra_reg, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_ape_reg, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_nom_reg, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,7 +143,7 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_correo_reg, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_usuario_reg, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -222,7 +222,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel logo_registro;
     public javax.swing.JTextField txt_ape_reg;
     public javax.swing.JTextField txt_contra_reg;
-    public javax.swing.JTextField txt_correo_reg;
     public javax.swing.JTextField txt_nom_reg;
+    public javax.swing.JTextField txt_usuario_reg;
     // End of variables declaration//GEN-END:variables
 }
