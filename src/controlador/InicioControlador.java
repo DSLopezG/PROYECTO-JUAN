@@ -28,6 +28,8 @@ public class InicioControlador {
         ctrl.iniciar();
         
         vw_inicio.setVisible(true);
+        
+        //mdaskljdasidj
          
         
     }
