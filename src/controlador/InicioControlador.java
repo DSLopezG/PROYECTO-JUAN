@@ -29,6 +29,6 @@ public class InicioControlador {
         
         vw_inicio.setVisible(true);
        
-       //kljdflhffhf  
+       //cambios bbcita
     }
 }
