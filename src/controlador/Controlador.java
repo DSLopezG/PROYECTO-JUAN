@@ -5,6 +5,7 @@
 package controlador;
 
 import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.Statement;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -66,7 +67,7 @@ public class Controlador implements ActionListener  {
      
      public void iniciar() {
         vw_inicio.setTitle("PhoneShop");
-        vw_inicio.setLocationRelativeTo(null);
+        //vw_inicio.setLocationRelativeTo(null);
     }
      
      public void actionPerformed(ActionEvent e) {
@@ -79,15 +80,41 @@ public class Controlador implements ActionListener  {
           
           if (e.getSource() == vw_sesion.btn_iniciosesion) {
               
+                      PreparedStatement ps = null;
+                      ConexionBD conn = new ConexionBD();
+                      Connection con = (Connection) conn.getConexion();
+
+                     String SQL4 = "SELECT * FROM USUARIOS;";
+                     
+                     try {
+                         
+                        
+                        Statement stmt = (Statement) con.createStatement();
+                        ResultSet rs;
+
+                        rs = stmt.executeQuery(SQL4);
+                        while ( rs.next() ) {
+                            
+                            String usuario = rs.getString("Usuario");
+                            //System.out.println(usuario);
+                            String contra = rs.getString("Contraseña");
+                            //System.out.println(contra);
+                            
+                            if ((vw_sesion.txt_inicio_usu.getText().equalsIgnoreCase(usuario)&& vw_sesion.txt_inicio_contra.getText().equalsIgnoreCase(contra))) {
+           
+                            vw_menu.setVisible(true);
+                            vw_sesion.setVisible(false);
+                            }
+                        }   
+                        JOptionPane.showMessageDialog(null,"USUSARIO INCORRECTO");
+                         
+                     } catch (SQLException ex) {
+                         Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                         
+                     }
               
               
-              if ((vw_sesion.txt_inicio_usu.getText().equalsIgnoreCase("jalopez")&& vw_sesion.txt_inicio_contra.getText().equalsIgnoreCase("4444"))) {
-                  
-                  vw_menu.setVisible(true);
-                  vw_sesion.setVisible(false);
-              } else {
-                  JOptionPane.showMessageDialog(null, "USUSARIO INCORRECTO");
-              }
+              
               
           }
           if (e.getSource() == vw_sesion.btn_registrar_inicio) {
