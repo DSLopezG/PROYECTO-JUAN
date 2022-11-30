@@ -87,6 +87,8 @@ public class Buscar extends javax.swing.JFrame {
 
         txt_Factura.setBackground(new java.awt.Color(153, 153, 153));
         txt_Factura.setForeground(new java.awt.Color(0, 0, 0));
+        txt_Factura.setText("0");
+        txt_Factura.setToolTipText("");
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
@@ -250,6 +252,6 @@ public class Buscar extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbl_buscar;
     public javax.swing.JTable tabla_buscar;
-    private javax.swing.JTextField txt_Factura;
+    public javax.swing.JTextField txt_Factura;
     // End of variables declaration//GEN-END:variables
 }

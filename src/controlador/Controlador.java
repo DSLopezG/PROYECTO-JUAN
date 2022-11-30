@@ -60,6 +60,7 @@ public class Controlador implements ActionListener  {
         this.vw_sesion.btn_iniciosesion.addActionListener(this);
         this.vw_sesion.btn_registrar_inicio.addActionListener(this);
         this.vw_registro.btn_registrar.addActionListener(this);
+        this.vw_buscar.btn_buscar_buscar.addActionListener(this);
         
         
      }
@@ -76,6 +77,7 @@ public class Controlador implements ActionListener  {
               
               vw_inicio.setVisible(false);
               vw_sesion.setVisible(true);
+             
           }
           
           if (e.getSource() == vw_sesion.btn_iniciosesion) {
@@ -87,35 +89,34 @@ public class Controlador implements ActionListener  {
                      String SQL4 = "SELECT * FROM USUARIOS;";
                      
                      try {
-                         
                         
+                        String usuario;
+                        String contra;
+     
                         Statement stmt = (Statement) con.createStatement();
                         ResultSet rs;
 
                         rs = stmt.executeQuery(SQL4);
                         while ( rs.next() ) {
                             
-                            String usuario = rs.getString("Usuario");
+                             usuario = rs.getString("Usuario");
                             //System.out.println(usuario);
-                            String contra = rs.getString("Contraseña");
-                            //System.out.println(contra);
+                             contra = rs.getString("Contraseña");
+                            //System.out.println(contra);     
                             
                             if ((vw_sesion.txt_inicio_usu.getText().equalsIgnoreCase(usuario)&& vw_sesion.txt_inicio_contra.getText().equalsIgnoreCase(contra))) {
            
                             vw_menu.setVisible(true);
-                            vw_sesion.setVisible(false);
-                            }
-                        }   
-                        JOptionPane.showMessageDialog(null,"USUSARIO INCORRECTO");
-                         
+                            vw_sesion.setVisible(false);   
+                            
+                            }      
+                        }
+
                      } catch (SQLException ex) {
                          Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
                          
                      }
-              
-              
-              
-              
+
           }
           if (e.getSource() == vw_sesion.btn_registrar_inicio) {
        
@@ -176,10 +177,74 @@ public class Controlador implements ActionListener  {
               
               vw_menu.setVisible(false);
               vw_buscar.setVisible(true);
-              
-              DefaultTableModel modelo = new DefaultTableModel();
+
+          }
+          
+          if (e.getSource() == vw_buscar.btn_buscar_buscar) {
+           
+                      
+             DefaultTableModel modelo = new DefaultTableModel();
               vw_buscar.tabla_buscar.setModel(modelo);
             
+               PreparedStatement ps = null;
+               ResultSet rs = null;
+               ConexionBD conn = new ConexionBD();
+               Connection con = (Connection) conn.getConexion();
+
+               String codigo=vw_buscar.txt_Factura.getText();
+               String sql5="";
+               
+                sql5 = "SELECT * FROM ventas where numfactura="+codigo+";";
+               if (codigo.equalsIgnoreCase("0")) {
+                   sql5 = "SELECT * FROM ventas;";
+              }
+              
+               
+               
+            try {
+                ps = (PreparedStatement) con.prepareStatement(sql5);
+                rs = ps.executeQuery();
+                ResultSetMetaData rsMD = (ResultSetMetaData) rs.getMetaData();
+
+                int cantidadColumnas = rsMD.getColumnCount();
+
+                modelo.addColumn("NumFactura");
+                modelo.addColumn("Nombre");
+                modelo.addColumn("Documento");
+                modelo.addColumn("Telefono");
+                modelo.addColumn("Marca");
+                modelo.addColumn("Cargador");
+                modelo.addColumn("Audifonos");
+                modelo.addColumn("Precio");
+
+                while (rs.next()) {
+
+                    Object[] filas = new Object[cantidadColumnas];
+
+                    for (int i = 0; i < cantidadColumnas; i++) {
+
+                        filas[i] = rs.getObject(i + 1);
+
+                    }
+
+                    modelo.addRow(filas);
+
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+         }
+          
+          if (e.getSource() == vw_menu.btn_Inventario) {
+              
+              DefaultTableModel modelo = new DefaultTableModel();
+              vw_inventario.tabla_inventario.setModel(modelo);
+              
+              
+              vw_menu.setVisible(false);
+              vw_inventario.setVisible(true);
+              
                PreparedStatement ps = null;
                ResultSet rs = null;
                ConexionBD conn = new ConexionBD();
@@ -219,12 +284,6 @@ public class Controlador implements ActionListener  {
             } catch (SQLException ex) {
                 Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
             }
-              
-          }
-          if (e.getSource() == vw_menu.btn_Inventario) {
-              
-              vw_menu.setVisible(false);
-              vw_inventario.setVisible(true);
           }
           if (e.getSource() == vw_menu.btn_Salir) {
               
