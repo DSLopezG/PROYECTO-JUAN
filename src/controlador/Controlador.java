@@ -61,6 +61,7 @@ public class Controlador implements ActionListener  {
         this.vw_sesion.btn_registrar_inicio.addActionListener(this);
         this.vw_registro.btn_registrar.addActionListener(this);
         this.vw_buscar.btn_buscar_buscar.addActionListener(this);
+        this.vw_comprar.btn_comprar.addActionListener(this);
         
         
      }
@@ -173,6 +174,44 @@ public class Controlador implements ActionListener  {
               vw_comprar.setVisible(true);
           }
           
+          if(e.getSource() == vw_comprar.btn_comprar){
+              if(vw_comprar.txt_nom_com.getText().length() !=0 && vw_comprar.txt_doc_com.getText().length() !=0 &&
+                 vw_comprar.txt_tel_com.getText().length() !=0 && vw_comprar.txt_dir_com.getText().length() !=0 ){
+              
+                        String nombre = vw_comprar.txt_nom_com.getText();
+                        String documento = vw_comprar.txt_doc_com.getText();
+                        String telefono = vw_comprar.txt_tel_com.getText();
+                        String direccion = vw_comprar.txt_dir_com.getText();
+                        
+                        PreparedStatement ps = null;
+                        ConexionBD conn = new ConexionBD();
+                        Connection con = (Connection) conn.getConexion();
+
+                    // String sql2 = "INSERT INTO ventas (Nombre, Apellido, Usuario, Contraseña) VALUES ('"+nombre+"', '"+apellido+"', '"+usuario+"', '"+contraseña+"');";
+                     
+                     try {
+                         
+                      //   ps = (PreparedStatement) con.prepareStatement(sql2);              
+                         ps.executeUpdate();
+                        
+                         vw_registro.setVisible(false);
+                         JOptionPane.showMessageDialog(null,"REGISTRO EXITOSO");
+                         vw_sesion.setVisible(true);
+                         
+                     } catch (SQLException ex) {
+                         Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                         JOptionPane.showMessageDialog(null,"REGISTRO RECHAZADO");
+                     }
+
+                      
+
+              } else if(vw_registro.txt_nom_reg.getText().length()==0 || vw_registro.txt_ape_reg.getText().length()==0 ||
+                 vw_registro.txt_usuario_reg.getText().length()==0 || vw_registro.txt_contra_reg.getText().length()==0) {
+                  
+                   JOptionPane.showMessageDialog(null,"FALTAN CAMPOS POR LLENAR");
+              }
+          }
+          
           if (e.getSource() == vw_menu.btn_Buscar) {
               
               vw_menu.setVisible(false);
@@ -195,12 +234,10 @@ public class Controlador implements ActionListener  {
                String sql5="";
                
                 sql5 = "SELECT * FROM ventas where numfactura="+codigo+";";
-               if (codigo.equalsIgnoreCase("0")) {
+               if (codigo.length()==0 || codigo.equalsIgnoreCase("0")) {
                    sql5 = "SELECT * FROM ventas;";
               }
-              
-               
-               
+        
             try {
                 ps = (PreparedStatement) con.prepareStatement(sql5);
                 rs = ps.executeQuery();

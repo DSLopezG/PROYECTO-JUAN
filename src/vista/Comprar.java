@@ -132,6 +132,11 @@ public class Comprar extends javax.swing.JFrame {
         jComboBox1.setBackground(new java.awt.Color(153, 153, 153));
         jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "1", "2", "3" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setBackground(new java.awt.Color(153, 153, 153));
         jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
@@ -276,6 +281,10 @@ public class Comprar extends javax.swing.JFrame {
     private void txt_nom_comActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nom_comActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_nom_comActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
