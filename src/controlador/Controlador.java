@@ -166,8 +166,8 @@ public class Controlador implements ActionListener  {
               }
               
           }
-          
-          
+                      
+            
           if (e.getSource() == vw_menu.btn_Comprar) {
             
               vw_menu.setVisible(false);
@@ -346,6 +346,11 @@ public class Controlador implements ActionListener  {
               vw_menu.setVisible(true);
           }
 
+          if (e.getSource() == vw_registro.btn_atras_registrar) {
+            
+              vw_registro.setVisible(false);
+              vw_inicio.setVisible(true);
+          }
   
      }
 }

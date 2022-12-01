@@ -43,7 +43,7 @@ public class Comprar extends javax.swing.JFrame {
         txt_tel_com = new javax.swing.JTextField();
         txt_doc_com = new javax.swing.JTextField();
         txt_fac_com = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbx_celulares_comprar = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
         lbl_TituloComprar = new javax.swing.JLabel();
@@ -129,22 +129,22 @@ public class Comprar extends javax.swing.JFrame {
         txt_fac_com.setBackground(new java.awt.Color(153, 153, 153));
         txt_fac_com.setForeground(new java.awt.Color(0, 0, 0));
 
-        jComboBox1.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "1", "2", "3" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cbx_celulares_comprar.setBackground(new java.awt.Color(153, 153, 153));
+        cbx_celulares_comprar.setForeground(new java.awt.Color(0, 0, 0));
+        cbx_celulares_comprar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "SAMSUNG GALAXY S22 ULTRA", "APPLE 13 PRO MAX", "OPPO RENO 7 SERIES", "XIAOMI MI 11 ULTRA" }));
+        cbx_celulares_comprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cbx_celulares_comprarActionPerformed(evt);
             }
         });
 
         jComboBox2.setBackground(new java.awt.Color(153, 153, 153));
         jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "1", "2", "3" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "CARGADOR INALAMBRICO CARGA RAPIDA", "CARGADOR TURBO POWER TIPO C", "CARGADOR MAGNETICO TODAS LAS MARCAS", "POWER BANK" }));
 
         jComboBox3.setBackground(new java.awt.Color(153, 153, 153));
         jComboBox3.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "1", "2", "3" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "AIR PODS PRO 2", "JBL IN EAR ENDURANCE", "SONY ZX SERIES MDR", "HUAWEI FREE BUDS 4I" }));
 
         lbl_TituloComprar.setBackground(new java.awt.Color(204, 204, 204));
         lbl_TituloComprar.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
@@ -185,11 +185,11 @@ public class Comprar extends javax.swing.JFrame {
                         .addGap(40, 40, 40)))
                 .addGap(26, 26, 26)
                 .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_fac_com, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                    .addComponent(txt_fac_com)
                     .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                    .addComponent(cbx_celulares_comprar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprarLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,7 +231,7 @@ public class Comprar extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbx_celulares_comprar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
@@ -282,9 +282,9 @@ public class Comprar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_nom_comActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbx_celulares_comprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_celulares_comprarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbx_celulares_comprarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,7 +324,7 @@ public class Comprar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn_atras_com;
     public javax.swing.JButton btn_comprar;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbx_celulares_comprar;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;

@@ -92,12 +92,12 @@
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txt_fac_com" pref="188" max="32767" attributes="0"/>
+                      <Component id="txt_fac_com" max="32767" attributes="0"/>
                       <Component id="jComboBox3" alignment="0" max="32767" attributes="0"/>
                       <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="cbx_celulares_comprar" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="50" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
@@ -150,7 +150,7 @@
                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbx_celulares_comprar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -393,7 +393,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="cbx_celulares_comprar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
@@ -402,16 +402,17 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="5">
                 <StringItem index="0" value="NINGUNO"/>
-                <StringItem index="1" value="1"/>
-                <StringItem index="2" value="2"/>
-                <StringItem index="3" value="3"/>
+                <StringItem index="1" value="SAMSUNG GALAXY S22 ULTRA"/>
+                <StringItem index="2" value="APPLE 13 PRO MAX"/>
+                <StringItem index="3" value="OPPO RENO 7 SERIES"/>
+                <StringItem index="4" value="XIAOMI MI 11 ULTRA"/>
               </StringArray>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbx_celulares_comprarActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -426,11 +427,12 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="5">
                 <StringItem index="0" value="NINGUNO"/>
-                <StringItem index="1" value="1"/>
-                <StringItem index="2" value="2"/>
-                <StringItem index="3" value="3"/>
+                <StringItem index="1" value="CARGADOR INALAMBRICO CARGA RAPIDA"/>
+                <StringItem index="2" value="CARGADOR TURBO POWER TIPO C"/>
+                <StringItem index="3" value="CARGADOR MAGNETICO TODAS LAS MARCAS"/>
+                <StringItem index="4" value="POWER BANK"/>
               </StringArray>
             </Property>
           </Properties>
@@ -447,11 +449,12 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="5">
                 <StringItem index="0" value="NINGUNO"/>
-                <StringItem index="1" value="1"/>
-                <StringItem index="2" value="2"/>
-                <StringItem index="3" value="3"/>
+                <StringItem index="1" value="AIR PODS PRO 2"/>
+                <StringItem index="2" value="JBL IN EAR ENDURANCE"/>
+                <StringItem index="3" value="SONY ZX SERIES MDR"/>
+                <StringItem index="4" value="HUAWEI FREE BUDS 4I"/>
               </StringArray>
             </Property>
           </Properties>
