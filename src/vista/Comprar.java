@@ -42,10 +42,10 @@ public class Comprar extends javax.swing.JFrame {
         txt_dir_com = new javax.swing.JTextField();
         txt_tel_com = new javax.swing.JTextField();
         txt_doc_com = new javax.swing.JTextField();
-        txt_fac_com = new javax.swing.JTextField();
+        txt_precio_com = new javax.swing.JTextField();
         cbx_celulares_comprar = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbx_cargador_comprar = new javax.swing.JComboBox<>();
+        cbx_audifono_comprar = new javax.swing.JComboBox<>();
         lbl_TituloComprar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,7 +85,7 @@ public class Comprar extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel9.setText("No FACTURA :");
+        jLabel9.setText("PRECIO :");
 
         btn_atras_com.setBackground(new java.awt.Color(153, 153, 153));
         btn_atras_com.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
@@ -126,8 +126,8 @@ public class Comprar extends javax.swing.JFrame {
         txt_doc_com.setBackground(new java.awt.Color(153, 153, 153));
         txt_doc_com.setForeground(new java.awt.Color(0, 0, 0));
 
-        txt_fac_com.setBackground(new java.awt.Color(153, 153, 153));
-        txt_fac_com.setForeground(new java.awt.Color(0, 0, 0));
+        txt_precio_com.setBackground(new java.awt.Color(153, 153, 153));
+        txt_precio_com.setForeground(new java.awt.Color(0, 0, 0));
 
         cbx_celulares_comprar.setBackground(new java.awt.Color(153, 153, 153));
         cbx_celulares_comprar.setForeground(new java.awt.Color(0, 0, 0));
@@ -138,13 +138,13 @@ public class Comprar extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "CARGADOR INALAMBRICO CARGA RAPIDA", "CARGADOR TURBO POWER TIPO C", "CARGADOR MAGNETICO TODAS LAS MARCAS", "POWER BANK" }));
+        cbx_cargador_comprar.setBackground(new java.awt.Color(153, 153, 153));
+        cbx_cargador_comprar.setForeground(new java.awt.Color(0, 0, 0));
+        cbx_cargador_comprar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "CARGADOR INALAMBRICO CARGA RAPIDA", "CARGADOR TURBO POWER TIPO C", "CARGADOR MAGNETICO TODAS LAS MARCAS", "POWER BANK" }));
 
-        jComboBox3.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox3.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "AIR PODS PRO 2", "JBL IN EAR ENDURANCE", "SONY ZX SERIES MDR", "HUAWEI FREE BUDS 4I" }));
+        cbx_audifono_comprar.setBackground(new java.awt.Color(153, 153, 153));
+        cbx_audifono_comprar.setForeground(new java.awt.Color(0, 0, 0));
+        cbx_audifono_comprar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "AIR PODS PRO 2", "JBL IN EAR ENDURANCE", "SONY ZX SERIES MDR", "HUAWEI FREE BUDS 4I" }));
 
         lbl_TituloComprar.setBackground(new java.awt.Color(204, 204, 204));
         lbl_TituloComprar.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
@@ -185,9 +185,9 @@ public class Comprar extends javax.swing.JFrame {
                         .addGap(40, 40, 40)))
                 .addGap(26, 26, 26)
                 .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_fac_com)
-                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_precio_com)
+                    .addComponent(cbx_audifono_comprar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cbx_cargador_comprar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbx_celulares_comprar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_comprarLayout.createSequentialGroup()
@@ -235,14 +235,14 @@ public class Comprar extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbx_cargador_comprar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(15, 15, 15)
                         .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbx_audifono_comprar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(14, 14, 14)
                         .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_fac_com, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_precio_com, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(panel_comprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -324,9 +324,9 @@ public class Comprar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn_atras_com;
     public javax.swing.JButton btn_comprar;
-    private javax.swing.JComboBox<String> cbx_celulares_comprar;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    public javax.swing.JComboBox<String> cbx_audifono_comprar;
+    public javax.swing.JComboBox<String> cbx_cargador_comprar;
+    public javax.swing.JComboBox<String> cbx_celulares_comprar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -340,8 +340,8 @@ public class Comprar extends javax.swing.JFrame {
     private javax.swing.JPanel panel_comprar;
     public javax.swing.JTextField txt_dir_com;
     public javax.swing.JTextField txt_doc_com;
-    public javax.swing.JTextField txt_fac_com;
     public javax.swing.JTextField txt_nom_com;
+    public javax.swing.JTextField txt_precio_com;
     public javax.swing.JTextField txt_tel_com;
     // End of variables declaration//GEN-END:variables
 }

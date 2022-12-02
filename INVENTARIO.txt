@@ -1,0 +1,4 @@
+INVENTARIO
+ID: 4
+Articulo: XIAOMI MI 11 ULTRA
+Cantidad: 60

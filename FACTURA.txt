@@ -1,0 +1,15 @@
+FACTURA GENERADA
+Nombre: pepe
+Documento: 213415235
+Telefono: 234234
+Dirección: dig5
+
+***********************************************************
+
+         PRODUCTOS ADQUIRIDOS
+
+: 
+Celular: OPPO RENO 7 SERIES
+Cargador: NINGUNO
+Audifonos: NINGUNO
+Precio: 3399000.0

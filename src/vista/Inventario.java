@@ -35,8 +35,8 @@ public class Inventario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_inventario = new javax.swing.JTable();
         txt_cantidad_inventario = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        cbx_opc_inventario = new javax.swing.JComboBox<>();
+        btn_actu_inventario = new javax.swing.JButton();
         btn_buscar_inventario = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
@@ -110,13 +110,13 @@ public class Inventario extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "SAMSUNG GALAXY S22 ULTRA", "APPLE 13 PRO MAX", "OPPO RENO 7 SERIES", "XIAOMI MI 11 ULTRA", "CARGADOR INALAMBRICO CARGA RAPIDA", "CARGADOR TURBO POWER TIPO C", "CARGADOR MAGNETICO TODAS LAS MARCAS", "POWER BANK", "AIR PODS PRO 2", "JBL IN EAR ENDURANCE", "SONY ZX SERIES MDR", "HUAWEI FREE BUDS 4I" }));
+        cbx_opc_inventario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "SAMSUNG GALAXY S22 ULTRA", "APPLE 13 PRO MAX", "OPPO RENO 7 SERIES", "XIAOMI MI 11 ULTRA", "CARGADOR INALAMBRICO CARGA RAPIDA", "CARGADOR TURBO POWER TIPO C", "CARGADOR MAGNETICO TODAS LAS MARCAS", "POWER BANK", "AIR PODS PRO 2", "JBL IN EAR ENDURANCE", "SONY ZX SERIES MDR", "HUAWEI FREE BUDS 4I" }));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 51, 51));
-        jButton1.setText("ACTUALIZAR");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_actu_inventario.setBackground(new java.awt.Color(153, 153, 153));
+        btn_actu_inventario.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        btn_actu_inventario.setForeground(new java.awt.Color(0, 51, 51));
+        btn_actu_inventario.setText("ACTUALIZAR");
+        btn_actu_inventario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btn_buscar_inventario.setBackground(new java.awt.Color(153, 153, 153));
         btn_buscar_inventario.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
@@ -148,13 +148,13 @@ public class Inventario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbx_opc_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btn_buscar_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btn_imp_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_actu_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txt_cantidad_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(32, 32, 32))
@@ -172,14 +172,14 @@ public class Inventario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbx_opc_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_buscar_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_imp_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_actu_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_cantidad_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(40, 40, 40)
                         .addComponent(btn_atras_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -253,17 +253,17 @@ public class Inventario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btn_actu_inventario;
     public javax.swing.JButton btn_atras_inventario;
-    private javax.swing.JButton btn_buscar_inventario;
+    public javax.swing.JButton btn_buscar_inventario;
     public javax.swing.JButton btn_imp_inventario;
-    private javax.swing.JButton jButton1;
-    public javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JComboBox<String> cbx_opc_inventario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable tabla_inventario;
-    private javax.swing.JTextField txt_cantidad_inventario;
+    public javax.swing.JTextField txt_cantidad_inventario;
     // End of variables declaration//GEN-END:variables
 }
