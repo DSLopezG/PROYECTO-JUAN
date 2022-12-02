@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class ConexionBD {
     
     private final String BASE = "proyectofinal";
-    private final String URL = "jdbc:mysql://127.0.0.1:3306/proyectofinal";
+    private final String URL = "jdbc:mysql://localhost:3306/proyectofinal";
     private final String USERNAME = "root";
     private final String PASSWORD = "1234";
     private Connection con=null;

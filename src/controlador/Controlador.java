@@ -69,13 +69,13 @@ public class Controlador implements ActionListener {
         this.vw_inventario.btn_buscar_inventario.addActionListener(this);
         this.vw_inventario.btn_atras_inventario.addActionListener(this);
         this.vw_buscar.btn_imp_buscar.addActionListener(this);
-        this.vw_inventario.btn_imp_inventario.addActionListener(this);
+        this.vw_menu.btn_cerrar_sesion.addActionListener(this);
 
     }
 
     public void iniciar() {
         vw_inicio.setTitle("PhoneShop");
-        //vw_inicio.setLocationRelativeTo(null);
+        vw_inicio.setLocationRelativeTo(null);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -84,7 +84,7 @@ public class Controlador implements ActionListener {
 
             vw_inicio.setVisible(false);
             vw_sesion.setVisible(true);
-
+            vw_sesion.setLocationRelativeTo(null);
         }
 
         if (e.getSource() == vw_sesion.btn_iniciosesion) {
@@ -111,16 +111,19 @@ public class Controlador implements ActionListener {
                     contra = rs.getString("Contraseña");
                     //System.out.println(contra);     
 
-                    if ((vw_sesion.txt_inicio_usu.getText().equalsIgnoreCase(usuario) && vw_sesion.txt_inicio_contra.getText().equalsIgnoreCase(contra))) {
+                    if ((vw_sesion.txt_inicio_usu.getText().equalsIgnoreCase(usuario) && vw_sesion.txt_inicio_contra.getText().equals(contra))) {
 
                         vw_menu.setVisible(true);
                         vw_sesion.setVisible(false);
+                        vw_menu.setLocationRelativeTo(null);
 
                     }
+                    
                 }
 
             } catch (SQLException ex) {
                 Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                
 
             }
 
@@ -129,6 +132,7 @@ public class Controlador implements ActionListener {
 
             vw_registro.setVisible(true);
             vw_sesion.setVisible(false);
+            vw_registro.setLocationRelativeTo(null);
 
         }
 
@@ -156,6 +160,7 @@ public class Controlador implements ActionListener {
                     vw_registro.setVisible(false);
                     JOptionPane.showMessageDialog(null, "REGISTRO EXITOSO");
                     vw_sesion.setVisible(true);
+                    vw_sesion.setLocationRelativeTo(null);
 
                 } catch (SQLException ex) {
                     Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
@@ -170,10 +175,16 @@ public class Controlador implements ActionListener {
 
         }
 
+        
+        
+        
+        
+        //COMPRAR
         if (e.getSource() == vw_menu.btn_Comprar) {
 
             vw_menu.setVisible(false);
             vw_comprar.setVisible(true);
+            vw_comprar.setLocationRelativeTo(null);
         }
 
         if (e.getSource() == vw_comprar.btn_comprar) {
@@ -253,17 +264,24 @@ public class Controlador implements ActionListener {
                     JOptionPane.showMessageDialog(null, "COMPRA RECHAZADO");
                 }
 
-            } else if (vw_registro.txt_nom_reg.getText().length() == 0 || vw_registro.txt_ape_reg.getText().length() == 0
-                    || vw_registro.txt_usuario_reg.getText().length() == 0 || vw_registro.txt_contra_reg.getText().length() == 0) {
+            } else if (vw_comprar.txt_nom_com.getText().length() == 0 && vw_comprar.txt_doc_com.getText().length() == 0
+                    && vw_comprar.txt_tel_com.getText().length() == 0 && vw_comprar.txt_dir_com.getText().length() == 0) {
 
                 JOptionPane.showMessageDialog(null, "FALTAN CAMPOS POR LLENAR");
             }
         }
 
+        
+        
+        
+        
+        
+        //BUSCAR
         if (e.getSource() == vw_menu.btn_Buscar) {
 
             vw_menu.setVisible(false);
             vw_buscar.setVisible(true);
+            vw_buscar.setLocationRelativeTo(null);
 
         }
 
@@ -328,6 +346,7 @@ public class Controlador implements ActionListener {
 
             vw_menu.setVisible(false);
             vw_inventario.setVisible(true);
+            vw_inventario.setLocationRelativeTo(null);
 
             PreparedStatement ps = null;
             ResultSet rs = null;
@@ -392,6 +411,7 @@ public class Controlador implements ActionListener {
 
             vw_menu.setVisible(false);
             vw_inventario.setVisible(true);
+            vw_inventario.setLocationRelativeTo(null);
 
             
           
@@ -439,6 +459,7 @@ public class Controlador implements ActionListener {
 
             vw_menu.setVisible(false);
             vw_inventario.setVisible(true);
+            vw_inventario.setLocationRelativeTo(null);
 
             PreparedStatement ps = null;
             ResultSet rs = null;
@@ -495,25 +516,42 @@ public class Controlador implements ActionListener {
 
             vw_comprar.setVisible(false);
             vw_menu.setVisible(true);
+            vw_comprar.txt_nom_com.setText(null);
+            vw_comprar.txt_doc_com.setText(null);
+            vw_comprar.txt_tel_com.setText(null);
+            vw_comprar.txt_dir_com.setText(null);
+            vw_comprar.txt_precio_com.setText(null);
+            vw_comprar.cbx_celulares_comprar.setSelectedIndex(0);
+            vw_comprar.cbx_cargador_comprar.setSelectedIndex(0);
+            vw_comprar.cbx_audifono_comprar.setSelectedIndex(0);
         }
         if (e.getSource() == vw_buscar.btn_atras_buscar) {
 
             vw_buscar.setVisible(false);
             vw_menu.setVisible(true);
+            vw_menu.setLocationRelativeTo(null);
         }
         if (e.getSource() == vw_inventario.btn_atras_inventario) {
 
             vw_inventario.setVisible(false);
             vw_menu.setVisible(true);
+            vw_menu.setLocationRelativeTo(null);
         }
 
         if (e.getSource() == vw_registro.btn_atras_registrar) {
 
             vw_registro.setVisible(false);
             vw_sesion.setVisible(true);
+            vw_sesion.setLocationRelativeTo(null);
         }
         
-        
+         if (e.getSource() == vw_menu.btn_cerrar_sesion) {
+
+            vw_menu.setVisible(false);
+            vw_sesion.setVisible(true);
+            vw_sesion.setLocationRelativeTo(null);
+        }
+         
         if(e.getSource() == vw_buscar.btn_imp_buscar){
             
             DefaultTableModel modelo = new DefaultTableModel();
@@ -611,88 +649,5 @@ public class Controlador implements ActionListener {
             
             
         }
-        //
-        if (e.getSource() == vw_inventario.btn_imp_inventario) {
-
-            DefaultTableModel modelo = new DefaultTableModel();
-            vw_inventario.tabla_inventario.setModel(modelo);
-
-            vw_menu.setVisible(false);
-            vw_inventario.setVisible(true);
-
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            ConexionBD conn = new ConexionBD();
-            Connection con = (Connection) conn.getConexion();
-
-            String articulo = (String) vw_inventario.cbx_opc_inventario.getSelectedItem();
-            String sql = "SELECT * FROM inventario WHERE articulo = '"+articulo+"'; ";
-
-
-            try {
-                ps = (PreparedStatement) con.prepareStatement(sql);
-                rs = ps.executeQuery();
-                ResultSetMetaData rsMD = (ResultSetMetaData) rs.getMetaData();
-
-                int cantidadColumnas = rsMD.getColumnCount();
-
-                modelo.addColumn("idInventario");
-                modelo.addColumn("articulo");
-                modelo.addColumn("cantidad");
-                
-                
-                String pathname = "FACTURA.txt";
-            File f = new File(pathname);
-            try {
-                if (f.createNewFile()) {
-                    System.out.println("File created with filename: " + f.getName());
-                } else {
-                    System.out.println("File already exists");
-                }
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
-
-            System.out.println("File path: " + f.getAbsolutePath());
-
-            String filename = "INVENTARIO.txt";
-            FileWriter fw = null;   
-                
-                
-                while (rs.next()) {
-
-                    Object[] filas = new Object[cantidadColumnas];
-
-                    for (int i = 0; i < cantidadColumnas; i++) {
-
-                        filas[i] = rs.getObject(i + 1);
-                          try {
-                fw = new FileWriter(filename);
-                fw.write(
-                        "INVENTARIO\n"
-                        + "ID: " + filas[0] + "\n"
-                        + "Articulo: " + filas[1] + "\n"
-                        + "Cantidad: " + filas[2] + "\n"
-                        );
-
-                fw.close();
-                            System.out.println("INVENTARIO GENERADA");
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
-                    }
-
-                    modelo.addRow(filas);
-
-                }
-
-            } catch (SQLException ex) {
-                Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            JOptionPane.showMessageDialog(null,"INVENTARIO GENERADO");
-        }
-        //
-
     }
 }

@@ -29,7 +29,6 @@ public class Inventario extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btn_imp_inventario = new javax.swing.JButton();
         btn_atras_inventario = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -46,17 +45,6 @@ public class Inventario extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Logo.png"))); // NOI18N
-
-        btn_imp_inventario.setBackground(new java.awt.Color(153, 153, 153));
-        btn_imp_inventario.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        btn_imp_inventario.setForeground(new java.awt.Color(0, 51, 51));
-        btn_imp_inventario.setText("IMPRIMIR");
-        btn_imp_inventario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_imp_inventario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_imp_inventarioActionPerformed(evt);
-            }
-        });
 
         btn_atras_inventario.setBackground(new java.awt.Color(153, 153, 153));
         btn_atras_inventario.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
@@ -99,6 +87,11 @@ public class Inventario extends javax.swing.JFrame {
         ));
         tabla_inventario.setRequestFocusEnabled(false);
         jScrollPane1.setViewportView(tabla_inventario);
+        if (tabla_inventario.getColumnModel().getColumnCount() > 0) {
+            tabla_inventario.getColumnModel().getColumn(0).setHeaderValue("Cod. Producto");
+            tabla_inventario.getColumnModel().getColumn(1).setHeaderValue("Producto");
+            tabla_inventario.getColumnModel().getColumn(2).setHeaderValue("Cantidad");
+        }
 
         txt_cantidad_inventario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_cantidad_inventario.setText("0");
@@ -148,15 +141,13 @@ public class Inventario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbx_opc_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_buscar_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_imp_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(btn_actu_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(txt_cantidad_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txt_cantidad_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btn_buscar_inventario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cbx_opc_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(32, 32, 32))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -173,10 +164,8 @@ public class Inventario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(cbx_opc_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_buscar_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_imp_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addComponent(btn_buscar_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_actu_inventario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,10 +193,6 @@ public class Inventario extends javax.swing.JFrame {
     private void btn_atras_inventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atras_inventarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_atras_inventarioActionPerformed
-
-    private void btn_imp_inventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imp_inventarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_imp_inventarioActionPerformed
 
     private void btn_buscar_inventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscar_inventarioActionPerformed
         // TODO add your handling code here:
@@ -256,7 +241,6 @@ public class Inventario extends javax.swing.JFrame {
     public javax.swing.JButton btn_actu_inventario;
     public javax.swing.JButton btn_atras_inventario;
     public javax.swing.JButton btn_buscar_inventario;
-    public javax.swing.JButton btn_imp_inventario;
     public javax.swing.JComboBox<String> cbx_opc_inventario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -1,15 +1,15 @@
 FACTURA GENERADA
-Nombre: pepe
-Documento: 213415235
-Telefono: 234234
-Dirección: dig5
+Nombre: Daniela Lopez
+Documento: 1010000498
+Telefono: no me lo se
+Dirección: diagonal 5a
 
 ***********************************************************
 
          PRODUCTOS ADQUIRIDOS
 
 : 
-Celular: OPPO RENO 7 SERIES
-Cargador: NINGUNO
-Audifonos: NINGUNO
-Precio: 3399000.0
+Celular: APPLE 13 PRO MAX
+Cargador: CARGADOR INALAMBRICO CARGA RAPIDA
+Audifonos: AIR PODS PRO 2
+Precio: 1.7289E7
