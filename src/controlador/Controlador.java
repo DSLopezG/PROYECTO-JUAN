@@ -118,12 +118,11 @@ public class Controlador implements ActionListener {
                         vw_menu.setLocationRelativeTo(null);
 
                     }
-                    
+
                 }
 
             } catch (SQLException ex) {
                 Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
-                
 
             }
 
@@ -175,10 +174,6 @@ public class Controlador implements ActionListener {
 
         }
 
-        
-        
-        
-        
         //COMPRAR
         if (e.getSource() == vw_menu.btn_Comprar) {
 
@@ -201,117 +196,173 @@ public class Controlador implements ActionListener {
                 String audifonos = (String) vw_comprar.cbx_audifono_comprar.getSelectedItem();
                 int precio = 0;
 
-                // celular
-                if (marca.equalsIgnoreCase("SAMSUNG GALAXY S22 ULTRA")) {
-                    precio = precio + 4772941;
-                }
-                if (marca.equalsIgnoreCase("APPLE 13 PRO MAX")) {
-                    precio = precio + 15390000;
-                }
-                if (marca.equalsIgnoreCase("OPPO RENO 7 SERIES")) {
-                    precio = precio + 3399000;
-                }
-                if (marca.equalsIgnoreCase("XIAOMI MI 11 ULTRA")) {
-                    precio = precio + 9900000;
-                }
-
-                //cargador
-                if (cargador.equalsIgnoreCase("CARGADOR INALAMBRICO CARGA RAPIDA")) {
-                    precio = precio + 370000;
-                }
-                if (cargador.equalsIgnoreCase("CARGADOR TURBO POWER TIPO C")) {
-                    precio = precio + 220000;
-                }
-                if (cargador.equalsIgnoreCase("CARGADOR MAGNETICO TODAS LAS MARCAS")) {
-                    precio = precio + 70000;
-                }
-                if (cargador.equalsIgnoreCase("POWER BANK")) {
-                    precio = precio + 139000;
-                }
-
-                //audifonos
-                if (audifonos.equalsIgnoreCase("AIR PODS PRO 2")) {
-                    precio = precio + 1529000;
-                }
-                if (audifonos.equalsIgnoreCase("JBL IN EAR ENDURANCE")) {
-                    precio = precio + 113848;
-                }
-                if (audifonos.equalsIgnoreCase("SONY ZX SERIES MDR")) {
-                    precio = precio + 103000;
-                }
-                if (audifonos.equalsIgnoreCase("HUAWEI FREE BUDS 4I")) {
-                    precio = precio + 299900;
-                }
-
-                String precioFinal = String.valueOf(precio);
-                vw_comprar.txt_precio_com.setText(precioFinal);
-
                 PreparedStatement ps = null;
                 PreparedStatement ps1 = null;
                 PreparedStatement ps2 = null;
+                PreparedStatement ps3 = null;
+                PreparedStatement ps4 = null;
+                PreparedStatement ps5 = null;
                 ConexionBD conn = new ConexionBD();
                 Connection con = (Connection) conn.getConexion();
 
-                String sql2 = "INSERT INTO ventas (Nombre, Documento, Telefono, Direccion, Marca, Cargador, Audifonos, Precio) VALUES ('" + nombre + "', '" + documento + "', '" + telefono + "', '" + direccion + "', '" + marca + "', '" + cargador + "', '" + audifonos + "' , '" + precio + "' );";
+                String uno = (String) vw_comprar.cbx_celulares_comprar.getSelectedItem();
+                String dos = (String) vw_comprar.cbx_cargador_comprar.getSelectedItem();
+                String tres = (String) vw_comprar.cbx_audifono_comprar.getSelectedItem();
+
+                String sql2 = "INSERT INTO ventas (Nombre, Documento, Telefono, Direccion, Marca, Cargador, Audifonos, Precio) VALUES ('" + nombre + "', '" + documento + "', '" + telefono + "', '" + direccion + "', '" + marca + "', '" + cargador + "', '" + audifonos + "' , '" + precio + "');";
+
+                String sql33 = "SELECT cantidad FROM inventario WHERE articulo = '" + uno + "';";
+                String sql34 = "SELECT cantidad FROM inventario WHERE articulo = '" + dos + "';";
+                String sql35 = "SELECT cantidad FROM inventario WHERE articulo = '" + tres + "';";
+
+                ResultSet rs;
+                ResultSet rs2;
+                ResultSet rs3;
+
+                Object RUno = null;
+                Object RDos = null;
+                Object RTres = null;
 
                 try {
+                    ps3 = (PreparedStatement) con.prepareStatement(sql33);
+                    ps4 = (PreparedStatement) con.prepareStatement(sql34);
+                    ps5 = (PreparedStatement) con.prepareStatement(sql35);
 
-                    ps = (PreparedStatement) con.prepareStatement(sql2);
-                    ps.executeUpdate();
-                    JOptionPane.showMessageDialog(null, "COMPRA EXITOSO");
+                    rs = ps3.executeQuery();
+                    rs2 = ps4.executeQuery();
+                    rs3 = ps5.executeQuery();
 
+                    while (rs.next()) {
+                        RUno = rs.getObject(1);
+                    }
+
+                    while (rs2.next()) {
+                        RDos = rs2.getObject(1);
+                    }
+
+                    while (rs3.next()) {
+                        RTres = rs3.getObject(1);
+                    }
+                   
                 } catch (SQLException ex) {
                     Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
-                    JOptionPane.showMessageDialog(null, "COMPRA RECHAZADO");
-                }
-                 
-                
-                
-                
-                
-                
-                
-                String articulo =  (String) vw_comprar.cbx_celulares_comprar.getSelectedItem();
-                 String sql3 = "UPDATE inventario SET cantidad = (cantidad-1) WHERE articulo = '" + articulo + "';";
-                String articulo2 =  (String) vw_comprar.cbx_cargador_comprar.getSelectedItem();
-                 String sql4 = "UPDATE inventario SET cantidad = (cantidad-1) WHERE articulo = '" + articulo2 + "';";
-                String articulo3 =  (String) vw_comprar.cbx_audifono_comprar.getSelectedItem();
-                 String sql5 = "UPDATE inventario SET cantidad = (cantidad-1) WHERE articulo = '" + articulo3 + "';";
-                try {
-
-                    ps = (PreparedStatement) con.prepareStatement(sql3);
-                    ps1 = (PreparedStatement) con.prepareStatement(sql4);
-                    ps2 = (PreparedStatement) con.prepareStatement(sql5);
-                    
-                    ps.executeUpdate();
-                    ps1.executeUpdate();
-                    ps2.executeUpdate();
-                    
-                    
-                } catch (SQLException ex) {
-                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
- 
                 }
                 
+                int u;
+                int d;
+                int t;
 
-                
-                
-                
-                
-                
-                
+                if (RUno == null) {
+                    u = 1;
+                } else {
+                    u = (int) RUno;
+
+                }
+                if (RDos == null) {
+                    d = 1;
+                } else {
+                    d = (int) RDos;
+
+                }
+                if (RTres == null) {
+                    t = 1;
+                } else {
+                    t = (int) RTres;
+                }
+
+                if (u <= 0 || d <= 0 || t <= 0) {
+                    JOptionPane.showMessageDialog(null, "No hay existencia de slguno de los articulos seleccionados ");
+                }
+
+                if (u > 0 && d > 0 && t > 0) {
+                    // celular
+                    if (marca.equalsIgnoreCase("SAMSUNG GALAXY S22 ULTRA")) {
+                        precio = precio + 4772941;
+                    }
+                    if (marca.equalsIgnoreCase("APPLE 13 PRO MAX")) {
+                        precio = precio + 15390000;
+                    }
+                    if (marca.equalsIgnoreCase("OPPO RENO 7 SERIES")) {
+                        precio = precio + 3399000;
+                    }
+                    if (marca.equalsIgnoreCase("XIAOMI MI 11 ULTRA")) {
+                        precio = precio + 9900000;
+                    }
+
+                    //cargador
+                    if (cargador.equalsIgnoreCase("CARGADOR INALAMBRICO CARGA RAPIDA")) {
+                        precio = precio + 370000;
+                    }
+                    if (cargador.equalsIgnoreCase("CARGADOR TURBO POWER TIPO C")) {
+                        precio = precio + 220000;
+                    }
+                    if (cargador.equalsIgnoreCase("CARGADOR MAGNETICO TODAS LAS MARCAS")) {
+                        precio = precio + 70000;
+                    }
+                    if (cargador.equalsIgnoreCase("POWER BANK")) {
+                        precio = precio + 139000;
+                    }
+
+                    //audifonos
+                    if (audifonos.equalsIgnoreCase("AIR PODS PRO 2")) {
+                        precio = precio + 1529000;
+                    }
+                    if (audifonos.equalsIgnoreCase("JBL IN EAR ENDURANCE")) {
+                        precio = precio + 113848;
+                    }
+                    if (audifonos.equalsIgnoreCase("SONY ZX SERIES MDR")) {
+                        precio = precio + 103000;
+                    }
+                    if (audifonos.equalsIgnoreCase("HUAWEI FREE BUDS 4I")) {
+                        precio = precio + 299900;
+                    }
+
+                    String precioFinal = String.valueOf(precio);
+                    vw_comprar.txt_precio_com.setText(precioFinal);
+
+                    try {
+
+                        ps = (PreparedStatement) con.prepareStatement(sql2);
+                        ps.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "COMPRA EXITOSO");
+
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                        JOptionPane.showMessageDialog(null, "COMPRA RECHAZADO");
+                    }
+
+                    String articulo = (String) vw_comprar.cbx_celulares_comprar.getSelectedItem();
+                    String sql3 = "UPDATE inventario SET cantidad = (cantidad-1) WHERE articulo = '" + articulo + "';";
+                    String articulo2 = (String) vw_comprar.cbx_cargador_comprar.getSelectedItem();
+                    String sql4 = "UPDATE inventario SET cantidad = (cantidad-1) WHERE articulo = '" + articulo2 + "';";
+                    String articulo3 = (String) vw_comprar.cbx_audifono_comprar.getSelectedItem();
+                    String sql5 = "UPDATE inventario SET cantidad = (cantidad-1) WHERE articulo = '" + articulo3 + "';";
+                    try {
+
+                        ps = (PreparedStatement) con.prepareStatement(sql3);
+                        ps1 = (PreparedStatement) con.prepareStatement(sql4);
+                        ps2 = (PreparedStatement) con.prepareStatement(sql5);
+
+                        ps.executeUpdate();
+                        ps1.executeUpdate();
+                        ps2.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+
+                    }
+
+                }
+
             } else if (vw_comprar.txt_nom_com.getText().length() == 0 && vw_comprar.txt_doc_com.getText().length() == 0
                     && vw_comprar.txt_tel_com.getText().length() == 0 && vw_comprar.txt_dir_com.getText().length() == 0) {
 
                 JOptionPane.showMessageDialog(null, "FALTAN CAMPOS POR LLENAR");
+
             }
+//aqui
         }
 
-        
-        
-        
-        
-        
         //BUSCAR
         if (e.getSource() == vw_menu.btn_Buscar) {
 
@@ -440,8 +491,7 @@ public class Controlador implements ActionListener {
                 Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "ACTUALIZACIÓN RECHAZADA");
             }
-            
-            
+
             DefaultTableModel modelo = new DefaultTableModel();
             vw_inventario.tabla_inventario.setModel(modelo);
 
@@ -449,16 +499,14 @@ public class Controlador implements ActionListener {
             vw_inventario.setVisible(true);
             vw_inventario.setLocationRelativeTo(null);
 
-            
-          
             ResultSet rs = null;
-           
+
             String sql67 = "SELECT * FROM inventario; ";
-            
 
             try {
                 ps = (PreparedStatement) con.prepareStatement(sql67);
                 rs = ps.executeQuery();
+
                 ResultSetMetaData rsMD = (ResultSetMetaData) rs.getMetaData();
 
                 int cantidadColumnas = rsMD.getColumnCount();
@@ -580,16 +628,16 @@ public class Controlador implements ActionListener {
             vw_sesion.setVisible(true);
             vw_sesion.setLocationRelativeTo(null);
         }
-        
-         if (e.getSource() == vw_menu.btn_cerrar_sesion) {
+
+        if (e.getSource() == vw_menu.btn_cerrar_sesion) {
 
             vw_menu.setVisible(false);
             vw_sesion.setVisible(true);
             vw_sesion.setLocationRelativeTo(null);
         }
-         
-        if(e.getSource() == vw_buscar.btn_imp_buscar){
-            
+
+        if (e.getSource() == vw_buscar.btn_imp_buscar) {
+
             DefaultTableModel modelo = new DefaultTableModel();
             vw_buscar.tabla_buscar.setModel(modelo);
 
@@ -622,25 +670,24 @@ public class Controlador implements ActionListener {
                 modelo.addColumn("Cargador");
                 modelo.addColumn("Audifonos");
                 modelo.addColumn("Precio");
-                
-                
+
                 //CREAR ARCHIVO
-            String pathname = "FACTURA.txt";
-            File f = new File(pathname);
-            try {
-                if (f.createNewFile()) {
-                    System.out.println("File created with filename: " + f.getName());
-                } else {
-                    System.out.println("File already exists");
+                String pathname = "FACTURA.txt";
+                File f = new File(pathname);
+                try {
+                    if (f.createNewFile()) {
+                        System.out.println("File created with filename: " + f.getName());
+                    } else {
+                        System.out.println("File already exists");
+                    }
+                } catch (IOException ex) {
+                    System.out.println(ex);
                 }
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
 
-            System.out.println("File path: " + f.getAbsolutePath());
+                System.out.println("File path: " + f.getAbsolutePath());
 
-            String filename = "FACTURA.txt";
-            FileWriter fw = null;   
+                String filename = "FACTURA.txt";
+                FileWriter fw = null;
 
                 while (rs.next()) {
 
@@ -649,27 +696,27 @@ public class Controlador implements ActionListener {
                     for (int i = 0; i < cantidadColumnas; i++) {
 
                         filas[i] = rs.getObject(i + 1);
-                        
-                        try {
-                fw = new FileWriter(filename);
-                fw.write(
-                        "FACTURA GENERADA\n"
-                        + "Nombre: " + filas[1] + "\n"
-                        + "Documento: " + filas[2] + "\n"
-                        + "Telefono: " + filas[3] + "\n"
-                        + "Dirección: " + filas[4]
-                        + "\n\n***********************************************************"
-                        + "\n\n         PRODUCTOS ADQUIRIDOS\n\n: "
-                        + "\nCelular: " + filas[5]
-                        + "\nCargador: " + filas[6]
-                        + "\nAudifonos: " + filas[7]
-                        + "\nPrecio: " + filas[8]);
 
-                fw.close();
+                        try {
+                            fw = new FileWriter(filename);
+                            fw.write(
+                                    "FACTURA GENERADA\n"
+                                    + "Nombre: " + filas[1] + "\n"
+                                    + "Documento: " + filas[2] + "\n"
+                                    + "Telefono: " + filas[3] + "\n"
+                                    + "Dirección: " + filas[4]
+                                    + "\n\n***********************************************************"
+                                    + "\n\n         PRODUCTOS ADQUIRIDOS\n\n: "
+                                    + "\nCelular: " + filas[5]
+                                    + "\nCargador: " + filas[6]
+                                    + "\nAudifonos: " + filas[7]
+                                    + "\nPrecio: " + filas[8]);
+
+                            fw.close();
                             System.out.println("FACTURA GENERADA");
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
+                        } catch (IOException ex) {
+                            System.out.println(ex);
+                        }
 
                     }
 
@@ -680,10 +727,9 @@ public class Controlador implements ActionListener {
             } catch (SQLException ex) {
                 Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            JOptionPane.showMessageDialog(null,"FACTURA GENERADA");
-            
-            
+
+            JOptionPane.showMessageDialog(null, "FACTURA GENERADA");
+
         }
     }
 }
