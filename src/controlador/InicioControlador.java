@@ -25,6 +25,8 @@ public class InicioControlador {
         
       
         Controlador ctrl = new Controlador (vw_inicio,vw_registro,vw_menu,vw_buscar,vw_comprar,vw_inventario,vw_sesion);
+        
+        
         ctrl.iniciar();
         
         vw_inicio.setVisible(true);

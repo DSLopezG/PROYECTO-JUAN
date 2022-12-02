@@ -244,10 +244,11 @@ public class Controlador implements ActionListener {
                 }
 
                 String precioFinal = String.valueOf(precio);
-
                 vw_comprar.txt_precio_com.setText(precioFinal);
 
                 PreparedStatement ps = null;
+                PreparedStatement ps1 = null;
+                PreparedStatement ps2 = null;
                 ConexionBD conn = new ConexionBD();
                 Connection con = (Connection) conn.getConexion();
 
@@ -263,7 +264,42 @@ public class Controlador implements ActionListener {
                     Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
                     JOptionPane.showMessageDialog(null, "COMPRA RECHAZADO");
                 }
+                 
+                
+                
+                
+                
+                
+                
+                String articulo =  (String) vw_comprar.cbx_celulares_comprar.getSelectedItem();
+                 String sql3 = "UPDATE inventario SET cantidad = (cantidad-1) WHERE articulo = '" + articulo + "';";
+                String articulo2 =  (String) vw_comprar.cbx_cargador_comprar.getSelectedItem();
+                 String sql4 = "UPDATE inventario SET cantidad = (cantidad-1) WHERE articulo = '" + articulo2 + "';";
+                String articulo3 =  (String) vw_comprar.cbx_audifono_comprar.getSelectedItem();
+                 String sql5 = "UPDATE inventario SET cantidad = (cantidad-1) WHERE articulo = '" + articulo3 + "';";
+                try {
 
+                    ps = (PreparedStatement) con.prepareStatement(sql3);
+                    ps1 = (PreparedStatement) con.prepareStatement(sql4);
+                    ps2 = (PreparedStatement) con.prepareStatement(sql5);
+                    
+                    ps.executeUpdate();
+                    ps1.executeUpdate();
+                    ps2.executeUpdate();
+                    
+                    
+                } catch (SQLException ex) {
+                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+ 
+                }
+                
+
+                
+                
+                
+                
+                
+                
             } else if (vw_comprar.txt_nom_com.getText().length() == 0 && vw_comprar.txt_doc_com.getText().length() == 0
                     && vw_comprar.txt_tel_com.getText().length() == 0 && vw_comprar.txt_dir_com.getText().length() == 0) {
 
